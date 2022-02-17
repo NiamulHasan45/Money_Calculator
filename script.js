@@ -1,3 +1,17 @@
+// errorMessagegePart
+
+function errorMessage(state) {
+    var error = document.getElementById("error")
+    if(state){
+        error.innerHTML = "<span class='position-absolute top-0 end-0' style='color: red;'>"+"Please enter valid numbers</span>";
+    }
+    else{
+        error.innerHTML = ""
+    }
+    
+}
+
+// Get values in Number Function 
 
 function expenceData(expence){
     const expenceInput = document.getElementById(expence+'-data');
@@ -14,12 +28,14 @@ function expenceData(expence){
 
 function totalExpences(expence1, expence2, expence3){
     const totalExpence = expence1 + expence2 + expence3;
-    // console.log(totalExpence);
     if(isNaN(totalExpence)){
-        alert("Please enter values correctly");
+
+        errorMessage(true);
+        // alert("Please enter values correctly");
         return 0;
     }
-    else if(expence1>=0 && expence2>=0 && expence3>=0 ){       
+    else if(expence1>=0 && expence2>=0 && expence3>=0 ){
+        errorMessage(false);       
         return totalExpence;
     }
     else{
