@@ -36,6 +36,11 @@ function balanceAfterExpence(incomeValue, totalExpence){
         alert("Please enter correct income value");
         return 0;
     }
+    else if(incomeValue<0){
+        alert("Income should not be negative.");
+        return 0;
+    }
+
     else{
         if(incomeValue>totalExpence){
             const balanceAfterExpence = incomeValue-totalExpence;
